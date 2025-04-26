@@ -1,0 +1,14 @@
+#400
+Tau: 5, ID Rate: 0.355
+Tau: 10, ID Rate: 0.44499999999999995
+Tau: 15, ID Rate: 0.485
+Tau: 20, ID Rate: 0.5
+Tau: 22, ID Rate: 0.505
+Tau: 24, ID Rate: 0.51
+Tau: 25, ID Rate: 0.515
+Tau: 26, ID Rate: 0.515
+Tau: 28, ID Rate: 0.52
+Tau: 30, ID Rate: 0.525
+Tau: 35, ID Rate: 0.515
+Tau: 40, ID Rate: 0.505
+Tau: 42, ID Rate: 0.505

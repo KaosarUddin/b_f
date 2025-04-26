@@ -1,0 +1,11 @@
+[
+  "tests/test_id_rate.py::test_id_rate_perfect",
+  "tests/test_id_rate.py::test_id_rate_type",
+  "tests/test_metrics.py::test_zero_on_identity[compute_alpha_procrustes-args1]",
+  "tests/test_metrics.py::test_zero_on_identity[compute_alpha_z_bw-args0]",
+  "tests/test_metrics.py::test_zero_on_identity[compute_bw-args2]",
+  "tests/test_metrics.py::test_zero_on_identity[compute_euclidean_distance-args6]",
+  "tests/test_metrics.py::test_zero_on_identity[compute_geodesic_distance-args3]",
+  "tests/test_metrics.py::test_zero_on_identity[compute_log_euclidean_distance-args4]",
+  "tests/test_metrics.py::test_zero_on_identity[compute_pearson_distance-args5]"
+]

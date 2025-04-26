@@ -1,0 +1,39 @@
+#400 Parcellations
+Tau: 0, ID Rate: 0.505
+Tau: 0.1, ID Rate: 0.46499999999999997
+Tau: 1, ID Rate: 0.81
+Tau: 3, ID Rate: 0.885
+Tau: 5, ID Rate: 0.895
+Tau: 10, ID Rate: 0.915
+Tau: 12, ID Rate: 0.905
+Tau: 14, ID Rate: 0.915
+Tau: 16, ID Rate: 0.9099999999999999
+Tau: 18, ID Rate: 0.9099999999999999
+Tau: 20, ID Rate: 0.905
+
+#500 Parcellations
+Tau: 0, ID Rate: 0.26
+Tau: 0.1, ID Rate: 0.365
+Tau: 1, ID Rate: 0.765
+Tau: 3, ID Rate: 0.8899999999999999
+Tau: 5, ID Rate: 0.8999999999999999
+Tau: 10, ID Rate: 0.9299999999999999
+Tau: 12, ID Rate: 0.925
+Tau: 14, ID Rate: 0.9299999999999999
+Tau: 16, ID Rate: 0.9299999999999999
+Tau: 18, ID Rate: 0.915
+Tau: 20, ID Rate: 0.915
+
+
+#600
+Tau: 0, ID Rate: 0.15
+Tau: 0.1, ID Rate: 0.33499999999999996
+Tau: 1, ID Rate: 0.7150000000000001
+Tau: 3, ID Rate: 0.855
+Tau: 5, ID Rate: 0.905
+Tau: 10, ID Rate: 0.925
+Tau: 12, ID Rate: 0.94
+Tau: 14, ID Rate: 0.94
+Tau: 16, ID Rate: 0.9450000000000001
+Tau: 18, ID Rate: 0.9450000000000001
+Tau: 20, ID Rate: 0.9450000000000001
