@@ -123,15 +123,15 @@ id2 = compute_id_rate(D21)
 print("Average ID rate:", (id1 + id2) / 2)
 ```
 
----
 
+---
 ## 🎛 Interactive Analysis Script Example
 
- ### 🧠 Connectome Analysis Configuration
+### 🧠 Connectome Analysis Configuration
 
- This interactive script is designed to **analyze connectome data**, which involves examining the neural connectivity matrices that map the connections between different regions of the brain.  
- By applying various distance and divergence metrics, the script computes **identification rates**, which measure the accuracy of identifying or distinguishing between subjects based on their unique connectome profiles.
- This process helps in understanding the **effectiveness** of different metrics in capturing the distinctiveness of individual brain connectivity patterns.
+This interactive script is designed to **analyze connectome data**, which involves examining the neural connectivity matrices that map the connections between different regions of the brain.  
+By applying various distance and divergence metrics, the script computes **identification rates**, which measure the accuracy of identifying or distinguishing between subjects based on their unique connectome profiles.
+This process helps in understanding the **effectiveness** of different metrics in capturing the distinctiveness of individual brain connectivity patterns.
 
 🔑 Key Steps
 1.Task Selection: Choose the tasks you wish to analyze (e.g., REST, EMOTION, LANGUAGE, etc.).
@@ -140,12 +140,12 @@ print("Average ID rate:", (id1 + id2) / 2)
 4.Base Directory: Specify the directory containing the connectome datasets.
 5.Subject Count: Enter the number of subjects to include in the analysis.
 
-
 Ensure you have the required connectome data files prepared. Running the script across different configurations allows you to verify the robustness and accuracy of computed identification rates.
 ---
 
 <details>
-<summary>Click to expand full interactive script</summary>
+<summary>▶️ Click to expand full interactive script</summary>
+
 ```python
 import numpy as np
 import time
@@ -293,8 +293,9 @@ verbose_print(f"Total runtime: {time.time() - start_time:.2f}s")
 
 </details>
 
-```
-## Testing
+---
+
+## 🧪 Testing
 
 Run the full test suite with `pytest`:
 
@@ -302,26 +303,33 @@ Run the full test suite with `pytest`:
 python -m pytest
 ```
 
-All divergence functions and the ID-rate calculation are covered by unit tests.
+✅ All distance functions and ID-rate calculations are covered by unit tests.
 
 ---
 
-## Contributing
+## 🤝 Contributing
 
-1. Fork the repository.  
-2. Create a new branch:  
+We welcome contributions!
+
+1. Fork the repository.
+2. Create a new feature branch:
    ```bash
    git checkout -b feature/your-feature
-   ```  
-3. Write code & tests.  
-4. Run `pytest` to verify.  
+   ```
+3. Write your code and add corresponding unit tests.
+4. Run `pytest` to ensure everything passes:
+   ```bash
+   python -m pytest
+   ```
 5. Submit a pull request.
 
-Please adhere to PEP 8 and include new tests for any added functionality.
+Please follow [PEP 8](https://pep8.org/) coding standards.
 
 ---
 
-## License
+## 📜 License
 
-SPDX license identifier: **MIT**  
-See the [LICENSE](LICENSE) file for full terms.
+Distributed under the **MIT License**.  
+See the [LICENSE](LICENSE) file for complete details.
+
+---
