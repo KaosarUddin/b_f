@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "spd-metrics-id"
-version = "0.1.0"
+version = "0.1.1"
 description = "Compute identification rates for SPD-matrix metrics across resolutions and tasks"
 readme = "README.md"
 authors = [ { name = "Kaosar Uddin", email = "mzu0014@auburn.edu" } ]
