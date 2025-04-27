@@ -10,7 +10,7 @@ def load_connectivity_matrix(file_path):
         print(f"Error loading {file_path}: {e}")
         return None
 
-def generate_file_paths(base_path, scan_type, num_subjects=15):
+def generate_file_paths(base_path, scan_type, num_subjects=30):
     file_paths = []
     subject_ids = [d for d in os.listdir(base_path) if os.path.isdir(os.path.join(base_path, d))]
     subject_ids = subject_ids[:num_subjects]
@@ -75,9 +75,9 @@ def distance_matrix(connectivity_matrices_1, connectivity_matrices_2, tau=1e-6):
 def compute_id_rate(distance_matrix):
     correct_identifications = sum(np.argmin(distance_matrix[i, :]) == i for i in range(distance_matrix.shape[0]))
     return correct_identifications / distance_matrix.shape[0]
-
-base_path = 'D:/Research AU/Python/connectomes_100/'
-#base_path = 'connectomes_100'
+base_path = "C:/Users/ksrru/Documents/Research AU/b_f/connectomes_100/"
+#base_path = 'D:/Research AU/Python/connectomes_100/'
+#base_path = 'connectomes_100/'
 lr_paths = generate_file_paths(base_path, 'LR')
 rl_paths = generate_file_paths(base_path, 'RL')
 

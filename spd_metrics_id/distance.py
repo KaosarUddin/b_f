@@ -11,7 +11,7 @@ def make_spd(matrix: np.ndarray, tau: float = 1e-6) -> np.ndarray:
 
 
 
-def compute_alpha_z_bw(A: np.ndarray, B: np.ndarray, alpha: float, z: float) -> float:
+def alpha_z_bw(A: np.ndarray, B: np.ndarray, alpha: float, z: float) -> float:
     """Alpha-Z Bures–Wasserstein divergence."""
     if not (0 <= alpha <= z <= 1):
         raise ValueError("Alpha and z must satisfy 0 <= alpha <= z <= 1")
@@ -29,7 +29,7 @@ def compute_alpha_z_bw(A: np.ndarray, B: np.ndarray, alpha: float, z: float) -> 
     divergence = np.trace((1-alpha) * A + alpha * B) - np.trace(Q_az)    
     return float(np.real(divergence))
 
-def compute_alpha_procrustes(A: np.ndarray, B: np.ndarray, alpha: float) -> float:
+def alpha_procrustes(A: np.ndarray, B: np.ndarray, alpha: float) -> float:
     """Alpha-procrustes distance."""
     if alpha <= 0:
         raise ValueError("alpha > 0 required")
@@ -39,7 +39,7 @@ def compute_alpha_procrustes(A: np.ndarray, B: np.ndarray, alpha: float) -> floa
     return float(np.sqrt((np.trace(A2) + np.trace(B2) - 2 * np.trace(sqrtm(S))) / alpha**2))
 
 
-def compute_bw(X: np.ndarray, Y: np.ndarray) -> float:
+def bures_wasserstein(X: np.ndarray, Y: np.ndarray) -> float:
     """Bures–Wasserstein distance (no tau regularization)."""
     # Ensure symmetry but no additional regularization
     Xsp = (X + X.T) / 2
@@ -49,7 +49,7 @@ def compute_bw(X: np.ndarray, Y: np.ndarray) -> float:
     return float(np.real(np.trace(Xsp) + np.trace(Ysp) - 2 * np.trace(term)))
 
 
-def compute_geodesic_distance(
+def geodesic_distance(
     A: np.ndarray,
     B: np.ndarray,
     tau: float = 1e-6
@@ -62,20 +62,20 @@ def compute_geodesic_distance(
     C = invr.dot(B_sp).dot(invr)
     return float(norm(logm(C), 'fro'))
 
-def compute_log_euclidean_distance(X: np.ndarray, Y: np.ndarray, tau: float = 1e-6) -> float:
+def log_euclidean_distance(X: np.ndarray, Y: np.ndarray, tau: float = 1e-6) -> float:
     """Log-Euclidean distance with SPD regularization."""
     X_sp = make_spd(X, tau)
     Y_sp = make_spd(Y, tau)
     return float(norm(logm(X_sp) - logm(Y_sp), 'fro'))
 
 
-def compute_pearson_distance(X: np.ndarray, Y: np.ndarray) -> float:
+def pearson_distance(X: np.ndarray, Y: np.ndarray) -> float:
     """Pearson-based distance (no SPD regularization)."""
     v1, v2 = X.flatten(), Y.flatten()
     r = np.corrcoef(v1, v2)[0,1]
     return float(1 - r)
 
 
-def compute_euclidean_distance(X: np.ndarray, Y: np.ndarray) -> float:
+def euclidean_distance(X: np.ndarray, Y: np.ndarray) -> float:
     """Euclidean distance of flattened matrices (no SPD regularization)."""
     return float(norm(X.flatten() - Y.flatten()))

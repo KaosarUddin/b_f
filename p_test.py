@@ -1,6 +1,6 @@
 import numpy as np
 from spd_metrics_id.io import find_subject_paths, load_matrix
-from spd_metrics_id.distance import compute_log_euclidean_distance
+from spd_metrics_id.distance import alpha_z_bw
 from spd_metrics_id.id_rate import compute_id_rate
 
 base = "connectomes_100/"
@@ -13,9 +13,9 @@ mats_lr = [load_matrix(p) for p in lr_paths]
 mats_rl = [load_matrix(p) for p in rl_paths]
 
 # build distance matrices
-D12 = np.array([[compute_log_euclidean_distance(A, B,.01)
+D12 = np.array([[alpha_z_bw(A, B,0.99,1)
                  for B in mats_rl] for A in mats_lr])
-D21 = np.array([[compute_log_euclidean_distance(A, B,.01)
+D21 = np.array([[alpha_z_bw(A, B,0.99,1)
                  for B in mats_lr] for A in mats_rl])
 
 # compute ID rates

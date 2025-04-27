@@ -6,13 +6,13 @@ import pandas as pd
 import seaborn as sns
 from spd_metrics_id.io import find_subject_paths, load_matrix
 from spd_metrics_id.distance import (
-    compute_alpha_z_bw,
-    compute_alpha_procrustes,
-    compute_bw,
-    compute_geodesic_distance,
-    compute_log_euclidean_distance,
-    compute_pearson_distance,
-    compute_euclidean_distance
+    alpha_z_bw,
+    alpha_procrustes,
+    bures_wasserstein,
+    geodesic_distance,
+    log_euclidean_distance,
+    pearson_distance,
+    euclidean_distance,
 )
 from spd_metrics_id.id_rate import compute_id_rate
 
@@ -23,8 +23,11 @@ start_time = time.time()
 verbose_print("Starting connectome identification process...")
 
 # Get user configuration
-print("\n                        ===== CONNECTOME ANALYSIS CONFIGURATION =====")
-print("This script is designed to analyze connectome data, which involves examining the neural connectivity matrices that map the connections between different regions of the brain. \nBy applying various distance and divergence metrics, the script computes identification rates, which measure the accuracy of identifying or distinguishing between subjects based on their unique connectome profiles. \nThis process helps in understanding the effectiveness of different metrics in capturing the distinctiveness of individual brain connectivity patterns.")
+print("\n                                      ===== CONNECTOME ANALYSIS CONFIGURATION =====")
+print("This script is designed to analyze connectome data, which involves examining the neural connectivity matrices that map the connections between different regions of the brain. \nBy applying various distance and divergence metrics, the script computes identification rates, which measure the accuracy of identifying between subjects based on their unique connectome profiles. \nThis process helps in understanding the effectiveness of different metrics in capturing the distinctiveness of individual brain connectivity patterns.")
+print("To test this script, ensure you have the required connectome data files and run the script with different configurations to verify the accuracy of identification rates.")
+print("To proceed, follow these steps: first, select the tasks you wish to analyze; next, choose the distance metrics to apply; then, specify any necessary tuning parameters; \nafter that, select the directory containing the connectome datasets; and finally, enter the number of subjects you want to include in the analysis.")
+
 def multi_choice(prompt, options):
     print(f"\n{prompt}")
     for i, opt in enumerate(options, 1):
@@ -40,13 +43,13 @@ selected_tasks = multi_choice("Select tasks to process:", TASKS)
 
 # 2) Distance metrics selection
 METRIC_FUNCS = {
-    'Alpha Z': compute_alpha_z_bw,
-    'Alpha Procrustes': compute_alpha_procrustes,
-    'Bures-Wasserstein': compute_bw,
-    'AI': compute_geodesic_distance,
-    'Log-Euclidean': compute_log_euclidean_distance,
-    'Pearson': compute_pearson_distance,
-    'Euclidean': compute_euclidean_distance
+    'Alpha Z': alpha_z_bw,
+    'Alpha Procrustes': alpha_procrustes,
+    'Bures-Wasserstein': bures_wasserstein,
+    'AI': geodesic_distance,
+    'Log-Euclidean': log_euclidean_distance,
+    'Pearson': pearson_distance,
+    'Euclidean': euclidean_distance
 }
 metric_names = list(METRIC_FUNCS.keys())
 selected_metrics = multi_choice("Select distance metrics:", metric_names)
@@ -92,7 +95,7 @@ for task in selected_tasks:
     for metric in selected_metrics:
         fn = METRIC_FUNCS[metric]
         # Geodesic or Log-Euclidean with tau
-        if metric in ['Geodesic', 'Log-Euclidean']:
+        if metric in ['AI', 'Log-Euclidean']:
             for tau in tau_geo_log:
                 verbose_print(f"Computing {metric} (tau={tau}) for {task}")
                 D12 = np.array([[fn(A, B, tau) for B in mats_rl] for A in mats_lr])

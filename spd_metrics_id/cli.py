@@ -3,25 +3,25 @@ import logging
 import numpy as np
 from .io import load_matrix, find_subject_paths
 from .distance import (
-    compute_alpha_z_bw,
-    compute_alpha_procrustes,
-    compute_bw,
-    compute_geodesic_distance,
-    compute_log_euclidean_distance,
-    compute_pearson_distance,
-    compute_euclidean_distance,
+    alpha_z_bw,
+    alpha_procrustes,
+    bures_wasserstein,
+    geodesic_distance,
+    log_euclidean_distance,
+    pearson_distance,
+    euclidean_distance,
 )
 from .id_rate import compute_id_rate
 
 # Define for each metric: (Pretty Name, function, list of kwargs it needs)
 METRICS = {
-    'alpha_z': ('Alpha-Z BW', compute_alpha_z_bw, ['alpha', 'z']),
-    'alpha_pro': ('Alpha-Procrustes', compute_alpha_procrustes, ['alpha']),
-    'bw': ('Bures-Wasserstein', compute_bw, []),
-    'geo': ('Affine-invariant', compute_geodesic_distance, ['tau']),
-    'log': ('Log-Euclidean', compute_log_euclidean_distance, ['tau']),
-    'pearson': ('Pearson', compute_pearson_distance, []),
-    'euclid': ('Euclidean', compute_euclidean_distance, []),
+    'alpha_z': ('Alpha-Z BW', alpha_z_bw, ['alpha', 'z']),
+    'alpha_pro': ('Alpha-Procrustes', alpha_procrustes, ['alpha']),
+    'bw': ('Bures-Wasserstein', bures_wasserstein, []),
+    'geo': ('Affine-invariant', geodesic_distance, ['tau']),
+    'log': ('Log-Euclidean', log_euclidean_distance, ['tau']),
+    'pearson': ('Pearson', pearson_distance, []),
+    'euclid': ('Euclidean', euclidean_distance, []),
 }
 
 def main():
