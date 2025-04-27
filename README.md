@@ -129,19 +129,35 @@ print("Average ID rate:", (id1 + id2) / 2)
 
 ### 🧠 Connectome Analysis Configuration
 
-This interactive script is designed to **analyze connectome data**, which involves examining the neural connectivity matrices that map the connections between different regions of the brain.  
-By applying various distance and divergence metrics, the script computes **identification rates**, which measure the accuracy of identifying or distinguishing between subjects based on their unique connectome profiles.
+This interactive script is designed to **analyze connectome data**, which involves examining neural connectivity matrices that map the connections between different regions of the brain.  
+By applying various distance and divergence metrics, the script computes **identification rates**, measuring how accurately subjects can be distinguished based on their unique connectome profiles.
+
 This process helps in understanding the **effectiveness** of different metrics in capturing the distinctiveness of individual brain connectivity patterns.
 
-🔑 Key Steps
-1.Task Selection: Choose the tasks you wish to analyze (e.g., REST, EMOTION, LANGUAGE, etc.).
-2.Metric Selection: Select the distance or divergence metrics to apply (e.g., Alpha Z, Alpha Procrustes, Bures-Wasserstein, etc.).
-3.Parameter Specification: Enter any necessary tuning parameters such as τ, α, and z for the selected metrics.
-4.Base Directory: Specify the directory containing the connectome datasets.
-5.Subject Count: Enter the number of subjects to include in the analysis.
+🔑 **Key Steps to Use the Interactive Script:**
 
-Ensure you have the required connectome data files prepared. Running the script across different configurations allows you to verify the robustness and accuracy of computed identification rates.
+1. **Task Selection:**  
+   Choose the tasks you wish to analyze (e.g., `REST`, `EMOTION`, `LANGUAGE`, etc.).
+
+2. **Metric Selection:**  
+   Select the distance or divergence metrics to apply (e.g., `Alpha Z`, `Alpha Procrustes`, `Bures-Wasserstein`, etc.).
+
+3. **Parameter Specification:**  
+   Enter any necessary tuning parameters such as `τ`, `α`, and `z` for the selected metrics.
+
+4. **Base Directory:**  
+   Specify the directory containing the connectome datasets (e.g., `connectomes_100/`).
+
+5. **Subject Count:**  
+   Enter the number of subjects to include in the analysis (e.g., `30`).
+
 ---
+
+✅ **Ensure you have the required connectome data files prepared.**  
+Running the script across different configurations allows you to verify the **robustness and accuracy** of computed identification rates.
+
+---
+
 
 <details>
 <summary>▶️ Click to expand full interactive script</summary>
