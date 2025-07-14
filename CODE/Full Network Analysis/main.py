@@ -99,28 +99,3 @@ print(f"ID Rate 2: {id_rate_2}")
 print(f"Final ID Rate: {final_id_rate}")
 
 
-# Anaother way to estimate the id rate
-def compute_id_rate_single_matrix(distance_matrix):
-    # Using rows for id_rate_1
-    id_rate_1 = sum(np.argmin(distance_matrix[i, :]) == i for i in range(distance_matrix.shape[0])) / distance_matrix.shape[0]
-    # Using columns for id_rate_2
-    id_rate_2 = sum(np.argmin(distance_matrix[:, j]) == j for j in range(distance_matrix.shape[1])) / distance_matrix.shape[1]
-    return (id_rate_1 + id_rate_2) / 2  # Return the average of the two rates
-
-def compute_id_rate_for_taus( tau_values):
-    # Dictionary to hold ID rates for each tau
-    id_rates_for_taus = {}
-
-    for tau in tau_values:
-        bw_distance_matrix = distance_matrix(connectivity_matrices_lr,connectivity_matrices_rl, tau=tau)  # Assuming matrices are comparable to themselves
-        average_id_rate = compute_id_rate_single_matrix(bw_distance_matrix)
-
-        # Store the results in the dictionary
-        id_rates_for_taus[tau] = average_id_rate
-        
-    return id_rates_for_taus
-# Assuming connectivity_matrices_lr and connectivity_matrices_rl are already loaded
-tau_values = [0.01] # Different regularization strengths to test
-# Compute the ID rates for different values of tau
-id_rates = compute_id_rate_for_taus(tau_values)
-print(f"Tau: {tau}, ID Rate: {id_rates}")
