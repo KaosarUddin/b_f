@@ -2,6 +2,7 @@
 import numpy as np
 import os
 from scipy.linalg import fractional_matrix_power
+import matplotlib.pyplot as plt
 import random
 def load_connectivity_matrix(file_path):
     try:
@@ -57,6 +58,7 @@ def compute_id_rate(distance_matrix):
 
 #base_path='/mmfs1/home/mzu0014/connectomes_200/'
 base_path = 'D:/Research AU/Python/connectomes_100/'
+
 lr_paths = generate_file_paths(base_path, 'LR')
 rl_paths = generate_file_paths(base_path, 'RL')
 
@@ -73,3 +75,5 @@ current_id_rate = (id_rate_1 + id_rate_2) / 2
 print(id_rate_1)
 print(id_rate_2)
 print(current_id_rate)
+
+
