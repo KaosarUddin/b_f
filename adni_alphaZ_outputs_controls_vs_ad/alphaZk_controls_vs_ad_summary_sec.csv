@@ -1,0 +1,2 @@
+Task,Dataset,Metric,CV Acc (mean),CV Acc (std),CV Macro-F1 (mean),CV Macro-F1 (std)
+Controls vs AD,SEC,"Alpha-Z (alpha=0.5, z=0.5)",0.4833333333333333,0.09373013705863711,0.4429836176895,0.12004739266035783

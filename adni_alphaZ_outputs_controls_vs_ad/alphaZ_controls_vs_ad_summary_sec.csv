@@ -1,0 +1,4 @@
+Task,Dataset,Metric,CV Acc (mean),CV Acc (std),CV Macro-F1 (mean),CV Macro-F1 (std),,,,
+Controls vs AD,SEC,"Alpha-Z (alpha=0.99, z=1.0)",0.502564103,0.13149622,0.473448349,0.131341944,,,,
+Task,Dataset,Model,alpha,z,C,gamma,CV Acc (mean),CV Acc (std),CV Macro-F1 (mean),CV Macro-F1 (std)
+Controls vs AD,SEC,SVM (RBF on Alpha-Z),0.99,1,10,2,0.484615385,0.064358464,0.453634085,0.099884788
