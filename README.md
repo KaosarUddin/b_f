@@ -1,5 +1,5 @@
 # SPD Metrics ID
-[# spd-metrics-id: A Python Package for SPD-Aware Distance Metrics
+## spd-metrics-id: A Python Package for SPD metrics for brain connectomes
 
 [![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.15891140-blue)](https://doi.org/10.5281/zenodo.15891140)
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
@@ -14,7 +14,7 @@ It provides both an easy-to-use **command-line interface (CLI)** and a **Python 
 
 📘 **Citation:**  
 If you use this package in your research, please cite it as:  
-Kaosar Uddin. *spd-metrics-id: SPD-Aware Distance Metrics for Brain Connectomes.* Zenodo, 2025.  
+Kaosar Uddin. *spd-metrics-id: A Python Package for SPD metrics for brain connectomes.* Zenodo, 2025.  
 [DOI: 10.5281/zenodo.15891140](https://doi.org/10.5281/zenodo.15891140)
 
 ---
