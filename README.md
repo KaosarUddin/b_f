@@ -1,10 +1,23 @@
 # SPD Metrics ID
+[# spd-metrics-id: A Python Package for SPD-Aware Distance Metrics
 
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen) ![License: MIT](https://img.shields.io/badge/license-MIT-blue)
+[![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.15891140-blue)](https://doi.org/10.5281/zenodo.15891140)
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+![License: MIT](https://img.shields.io/badge/license-MIT-blue)
+[![PyPI](https://img.shields.io/pypi/v/spd-metrics-id.svg)](https://pypi.org/project/spd-metrics-id/)
+[![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/)
 
-**SPD Metrics ID** is a Python package for computing identification rates (ID rates) between symmetric positive-definite (SPD) connectivity matrices using a wide variety of distance and divergence metrics.
+---
 
-It provides both an easy-to-use **command-line interface (CLI)** and a **Python API** for flexible, customizable analysis of brain connectomes across different tasks, scan directions, parcellation resolutions, and regularization settings.
+**spd-metrics-id** is a Python package for computing **identification rates (ID rates)** between symmetric positive-definite (SPD) connectivity matrices using a wide variety of **distance and divergence metrics**.  
+It provides both an easy-to-use **command-line interface (CLI)** and a **Python API** for flexible, customizable analysis of **brain connectomes** across different tasks, scan directions, parcellation resolutions, and regularization settings.
+
+📘 **Citation:**  
+If you use this package in your research, please cite it as:  
+Kaosar Uddin. *spd-metrics-id: SPD-Aware Distance Metrics for Brain Connectomes.* Zenodo, 2025.  
+[DOI: 10.5281/zenodo.15891140](https://doi.org/10.5281/zenodo.15891140)
+
+---
 
 ## 📚 Table of Contents
 - [Features](#-features)
